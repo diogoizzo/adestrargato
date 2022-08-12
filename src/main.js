@@ -3,19 +3,7 @@ const video = document.getElementById("video");
 const frame = document.getElementById("divVideo");
 
 frame.addEventListener("click", (e) => {
-    if (video.paused) {
-        btn.style.display = "none";
-        if (e.target.parentElement === btn) video.play();
-    } else {
-        btn.style.display = "block";
-    }
+    if (e.target.parentElement === btn) video.play();
 });
-
-/*function toggleBtnPlay(e) {
-    if (video.paused) {
-        btn.style.display = "none";
-        if (e.target.parentElement === btn) video.play();
-    } else {
-        btn.style.display = "block";
-    }
-}*/
+video.onplay = () => (btn.style.display = "none");
+video.onpause = () => (btn.style.display = "block");
