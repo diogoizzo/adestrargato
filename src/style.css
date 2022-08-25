@@ -11,6 +11,16 @@
     -webkit-text-size-adjust: 100%;
 }
 
+details > summary {
+    list-style: none !important;
+}
+
+details > summary::marker, /* Latest Chrome, Edge, Firefox */
+details > summary::-webkit-details-marker /* Safari */
+{
+    display: none !important;
+}
+
 @layer base {
     html {
         scroll-behavior: smooth;
@@ -40,3 +50,5 @@
         -moz-text-decoration-color: #ef4444;
     }
 }
+
+
